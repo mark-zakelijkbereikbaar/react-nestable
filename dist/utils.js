@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getAllNonEmptyNodesIds = exports.listWithChildren = exports.getTransformProps = exports.getTotalScroll = exports.getOffsetRect = exports.closest = exports.isArray = exports.isString = exports.isNumber = exports.isFunction = exports.isUndefined = exports.isDefined = exports.objectType = void 0;
+exports.getAllNonEmptyNodesIds = exports.listWithChildren = exports.getTransformProps = exports.getOffsetRect = exports.closest = exports.isArray = exports.isString = exports.isNumber = exports.isFunction = exports.isUndefined = exports.isDefined = exports.objectType = void 0;
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
@@ -86,23 +86,6 @@ var getOffsetRect = function getOffsetRect(elem) {
 };
 
 exports.getOffsetRect = getOffsetRect;
-
-var getTotalScroll = function getTotalScroll(elem) {
-  var top = 0;
-  var left = 0;
-
-  while (elem = elem.parentNode) {
-    top += elem.scrollTop || 0;
-    left += elem.scrollLeft || 0;
-  }
-
-  return {
-    top: top,
-    left: left
-  };
-};
-
-exports.getTotalScroll = getTotalScroll;
 
 var getTransformProps = function getTransformProps(x, y) {
   return {
